@@ -23,24 +23,30 @@ Running `htop` requires `ncurses` libraries (typically named libncursesw*).
 
 For more information and details on how to contribute to `htop` visit [htop.dev](https://htop.dev).
 
-## Build instructions
-
+## Build Requirements
 This program is distributed as a standard GNU autotools-based package.
 
 Compiling `htop` requires the header files for `ncurses` (libncursesw*-dev). Install these and other required packages for C development from your package manager.
 
+### Debian/Ubuntu
+````bash
+apt -y install make automake libtool libncursesw*-dev
+````
+
+## Build instructions
+
 Then, when compiling from a [release tarball](https://bintray.com/htop/source/htop), run:
 
-~~~ shell
+````bash
 ./configure && make
-~~~
+````
 
 Alternatively, for compiling sources downloaded from the Git repository (`git clone` or downloads from [Github releases](https://github.com/htop-dev/htop/releases/)),
 install the header files for `ncurses` (libncursesw*-dev) and other required development packages from your distribution's package manager. Then run:
 
-~~~ shell
+````bash
 ./autogen.sh && ./configure && make
-~~~
+````
 
 By default `make install` will install into `/usr/local`, for changing the path use `./configure --prefix=/some/path`.
 
